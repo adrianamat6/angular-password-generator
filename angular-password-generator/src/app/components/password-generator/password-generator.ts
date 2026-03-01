@@ -29,6 +29,11 @@ export class PasswordGenerator {
     username: new FormControl('', [Validators.required, Validators.minLength(3)]),
   });
 
+
+  checkError(controlName: string, errorName: string): boolean | undefined {
+      return this.userForm.get(controlName)?.hasError(errorName) && this.userForm.get(controlName)?.touched;
+  }
+
   generatePasswordForm() {
 // 1. PRIMERO PREGUNTAMOS: ¿Es válido el formulario (pasó la Regex y el nombre)?
   if (this.userForm.valid) {
