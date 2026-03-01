@@ -15,6 +15,8 @@ export class PasswordGenerator {
   // Variable para guardar la contraseña y mostrarla en el HTML
   generatedPassword: string = '';
 
+
+
   // 1. Inyectamos el servicio
   passwordService = inject(Password);
 
@@ -44,6 +46,7 @@ export class PasswordGenerator {
 
     this.generatedPassword = result.password || '';
     console.log('Contraseña generada:', this.generatedPassword);
+
 
   }else{
     // 3. SI NO ES VÁLIDO: Avisamos al usuario
